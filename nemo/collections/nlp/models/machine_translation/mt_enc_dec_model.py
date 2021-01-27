@@ -372,4 +372,3 @@ class MTEncDecModel(EncDecNLPModel):
     @classmethod
     def list_available_models(cls) -> Optional[Dict[str, str]]:
         pass
-
