@@ -45,7 +45,7 @@ def get_char_dataset(config: dict, augmentor: Optional['AudioAugmentor'] = None)
         normalize=config.get('normalize_transcripts', False),
         trim=config.get('trim_silence', False),
         load_audio=config.get('load_audio', True),
-        parser=config.get('parser', 'en'),
+        parser=config.get('parser', 'base'),
         add_misc=config.get('add_misc', False),
     )
     return dataset
@@ -114,7 +114,7 @@ def get_tarred_char_dataset(
         unk_index=config.get('unk_index', -1),
         normalize=config.get('normalize_transcripts', False),
         trim=config.get('trim_silence', False),
-        parser=config.get('parser', 'en'),
+        parser=config.get('parser', 'base'),
         add_misc=config.get('add_misc', False),
         shard_strategy=config.get('tarred_shard_strategy', 'scatter'),
         global_rank=global_rank,
@@ -202,7 +202,7 @@ def get_dali_char_dataset(
         unk_index=config.get('unk_index', -1),
         normalize=config.get('normalize_transcripts', False),
         trim=config.get('trim_silence', False),
-        parser=config.get('parser', 'en'),
+        parser=config.get('parser', 'base'),
         shuffle=shuffle,
         device_id=device_id,
         global_rank=global_rank,
